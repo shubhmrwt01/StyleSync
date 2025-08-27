@@ -1,12 +1,12 @@
 import {
   Dimensions,
-  Image,
   Pressable,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
+  Image
 } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -18,85 +18,77 @@ const features = [
   {
     title: "AI Suggestions",
     image:
-      "https://i.pinimg.com/736x/2e/3d/d1/2e3dd14ac81b207ee6d86bc99ef576eb.jpg",
+      "https://image.made-in-china.com/202f0j00MaTqJAIWkdzF/Latest-Design-Elegant-Classic-Two-Piece-Pants-Set-Women-Long-Sleeve-Ladies-Shirt-and-Pants-Suit.webp",
     screen: "AIChat",
   },
   {
     title: "AI Outfit Maker",
     image:
-      "https://i.pinimg.com/736x/50/83/0e/50830e372ee844c1f429b8ef89e26fd1.jpg",
+      "https://rukminim2.flixcart.com/image/704/844/xif0q/ethnic-set/q/t/j/xl-sp-combo-dearise-original-imagpgvqqhrqehas.jpeg?q=90&crop=false",
     screen: "AIOutfit",
   },
   {
     title: "AI Try On",
     image:
-      "https://i.pinimg.com/736x/c2/78/95/c2789530a2dc8c9dbfd4aa5e2e70d608.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWABl246VZtcOazL8-W9IBqonzgZnocSjZg&s",
     screen: "AITryOn",
   },
   {
     title: "Color Analysis",
     image:
-      "https://i.pinimg.com/736x/84/bf/ce/84bfce1e46977d50631c4ef2f72f83b1.jpg",
+      "https://cdn.shopify.com/s/files/1/0423/3576/4634/files/White_Shirt_Olive_Green_Pant_Combination.webp",
     screen: "ColorAnalysis",
   },
 ];
 
-// const popularItems = [
-//   {
-//     username: "Trisha Wushres",
-//     profile: "https://randomuser.me/api/portraits/women/1.jpg",
-//     image:
-//       "https://res.cloudinary.com/db1ccefar/image/upload/v1753859289/skirt3_oanqxj.png",
-//     itemName: "Floral Skirt",
-//   },
-//   {
-//     username: "Anna Cris",
-//     profile: "https://randomuser.me/api/portraits/women/2.jpg",
-//     image:
-//       "https://res.cloudinary.com/db1ccefar/image/upload/v1753975629/Untitled_design_3_syip4x.png",
-//     itemName: "Mens Jeans",
-//   },
-//   {
-//     username: "Isabella",
-//     profile: "https://randomuser.me/api/portraits/women/3.jpg",
-//     image:
-//       "https://res.cloudinary.com/db1ccefar/image/upload/v1753975802/Untitled_design_11_p7t2us.png",
-//     itemName: "Shoes",
-//   },
-// ];
+const popularItems = [
+  {
+    username: "Trisha Wushres",
+    profile: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdktM9CiQKJvkjG1u_U9bHvqW6kzPCBwsR0w&s",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHSpWucTCUdb_O3ogbXlQlyM9RcYkwpMM4dA&s",
+    itemName: "Floral Skirt",
+  },
+  {
+    username: "Logan Cris",
+    profile: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFsZSUyMGZhY2V8ZW58MHx8MHx8fDA%3D",
+    image:
+      "https://image.hm.com/assets/hm/8b/ea/8bea8bac07ed75596e5597f6d2997f07cfd81fac.jpg",
+    itemName: "Mens Jeans",
+  },
+  {
+    username: "Isabella",
+    profile: "https://images.unsplash.com/photo-1580489944761-15a19d654956?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXi4XW7-xjcji7RTTD87f-jI8eMhnBofRKJw&s",
+    itemName: "Shoes",
+  },
+];
 
 const initialStories = [
   {
     username: "Your OOTD",
-    avatar: "https://picsum.photos/100/100?random=8",
+    avatar: "https://www.pacegallery.com/media/images/16_9-2.width-2000.png",
     isOwn: true,
     viewed: false,
   },
   {
     username: "_trishwushres",
-    avatar: "https://picsum.photos/100/100?random=10",
+    avatar: "https://images.squarespace-cdn.com/content/v1/6150da9bc04b0a138b3c0600/1634528500503-V7KPRTKGCRB73IY6IKB9/Stone-Circle.jpg",
     isOwn: false,
     viewed: false,
   },
   {
     username: "myglam",
-    avatar: "https://picsum.photos/100/100?random=11",
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFGawC4ToKE3wCtMfBzuBq4RI-x9m-Ir-Iww&s",
     isOwn: false,
     viewed: false,
   },
   {
     username: "stylist",
-    avatar: "https://picsum.photos/100/100?random=12",
+    avatar: "https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_1.5/ncom/software/switch/70010000033063/44ba47ef81db5012172d90726c825ef28792fd73621a68235fdb0114be9e761f",
     isOwn: false,
     viewed: false,
-  },
-];
-const popularItems = [
-  {
-    id: "1",
-    image: "",
-    itemName: "",
-    userName: "",
   },
 ];
 
@@ -115,14 +107,13 @@ const HomeScreen = () => {
     const dates = [];
     for (let i = -3; i <= 3; i++) {
       dates.push({
-        label: today.clone().add(i, "days").format("ddd,Do MMM"),
+        label: today.clone().add(i, "days").format("ddd, Do MMM"),
         outfit: i == 1,
       });
     }
     return dates;
   };
   const dates = generateDates();
-  console.log("dates", dates);
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="bg-white">
@@ -152,7 +143,7 @@ const HomeScreen = () => {
               >
                 <Image
                   className="w-16 h-16 rounded-full"
-                  source={{ uri: story.avatar }}
+                   source={{ uri: story.avatar }}
                 />
                 {story.isOwn && (
                   <View className="absolute bottom-0 right-0 bg-black rounded-full w-5 h-5 items-center justify-center ">
@@ -183,8 +174,14 @@ const HomeScreen = () => {
                 ? savedOutfits[today]
                 : null);
             return (
-              <View className="mr-3">
-                <Pressable
+              <View key={idx} className="mr-3">
+                <Pressable 
+                onPress={()=>{
+                  navigation.navigate("AddOutfit", {
+                    date:day.label,
+                    savedOutfits
+                  });
+                }}
                   className={`w-24 h-40 rounded-xl items-center justify-center overflow-hidden shadow-medium ${
                     outfit ? "bg-white" : "bg-gray-50"
                   }`}
@@ -196,6 +193,9 @@ const HomeScreen = () => {
                   )}
                   {outfit && <View></View>}
                 </Pressable>
+                <Text className="text-xs text-center mt-1 text-gray-700">
+                  {day.label}
+                </Text>
               </View>
             );
           })}
@@ -210,7 +210,7 @@ const HomeScreen = () => {
                 elevation: 3,
               }}
               key={idx}
-              className="w-[40%] h-36 mb-4 rounded-2xl shadow-md overflow-hidden"
+              className="w-[46%] h-36 mb-4 rounded-2xl shadow-md overflow-hidden"
             >
               <View className="p-3">
                 <Text className="font-bold text-[16px] text-gray-800 ">
@@ -228,7 +228,7 @@ const HomeScreen = () => {
               </View>
               <Image
                 style={{ transform: [{ rotate: "12deg" }], opacity: 0.9 }}
-                className="w-20 h-20 absolute bottom-[-3] right-[-1] rounded-lg"
+                className="w-20 h-20 absolute bottom-[-3] right-[-1] rounded-lg"    
                 source={{ uri: feature.image }}
               />
             </Pressable>
@@ -238,21 +238,27 @@ const HomeScreen = () => {
           <Text className="text-lg font-semibold">Popular this week</Text>
           <Text className="text-gray-500">More </Text>
         </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-4 pl-4">
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          className="mt-4 pl-4"
+        >
           {popularItems.map((item, idx) => (
-            <View key={idx} className="w-36 mr-4">
+            <View key={idx} className="w-36 mr-4 ">
               <Image
-                className="h-44 w-36 rounded-lg"
-                source={{ uri: item?.image }}
+                className="h-44 w-36 rounded-lg "
+                source={{ uri: item.image }}
               />
-              <View className="flex-row items-center mt-2">
+              <View className="flex-row items-center mt-2 ">
                 <Image
                   className="h-6 w-6 rounded-full"
-                  source={{ uri: item?.profile }}
+                  source={{ uri: item.profile }}
                 />
-                <Text className="text-xs font-medium">{item?.userName}</Text>
+                <Text className="text-xs font-medium ml-2">{item?.username}</Text>
               </View>
-              <Text className="text-xs text-gray-500 mt-1">{item?.itemName}</Text>
+              <Text className="text-xs text-gray-500 mt-1 ml-4">
+                {item?.itemName}
+              </Text>
             </View>
           ))}
         </ScrollView>

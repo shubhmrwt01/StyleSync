@@ -1,0 +1,34 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "backend",
+  "homepage": "https://github.com/shubhmrwt01/StyleSync#readme",
+  "bugs": {
+    "url": "https://github.com/shubhmrwt01/StyleSync/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhmrwt01/StyleSync.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+     "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.7.1",
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "compute-cosine-similarity": "^1.1.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
